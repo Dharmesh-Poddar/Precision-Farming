@@ -1,0 +1,60 @@
+{% extends "Base.html" %}
+
+{% block content %}
+
+
+<body>
+
+
+<div class="container">
+
+  <div class="jumbotron" >
+    <h1 class="display-4">Hello, Buddy!</h1>
+    <p class="lead">This web platform is made using <strong>Flask</strong> API. Serving Predictive model at your fingertips.</p>
+    <hr class="my-4">
+    <p>This projects will provide facilities like detection of weed and diseases in the crops ,a chatbot that will help them to collab with agriculture experts</p>
+  </div>
+
+</div>
+
+
+<div class="container">
+  <p>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      About Page
+    </button>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body" align='left'>
+This Project is based on the motto of helping the farmers by giving them access to the technology .This projects will provide facilities like detection of weed and diseases in the crops ,a chatbot that will help them to collab with agriculture experts etc.
+    </div>
+  </div>
+    <hr>
+  <form action="{{url_for("pred")}}"  method="POST" enctype="multipart/form-data">
+    <h4>Click below to upload your <strong>image</strong>.</h4>
+
+    <div class="form-group">
+    <!-- <img src="../static/upload5.png" alt="img" width="20%" height="5%"> -->
+    <label>
+    <input type="file" name="file" id="file" style="display:none" accept="image/*" required>
+    <img src="../static/upload5.png" width="50%">
+    </label>
+  </div>
+
+    <div class="container">
+      <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+      <label class="form-check-label" for="exampleCheck1">Make sure you uploaded images related to <strong>1. agriculture feild</strong></label>
+    </div>
+
+    </div>
+  <br>
+    <input type="submit" class="btn btn-secondary" name="Submit and predict" value="Submit and Predict">
+  </form>
+  <br>
+
+</div>
+
+
+</body>
+{% endblock %}
